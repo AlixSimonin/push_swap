@@ -6,7 +6,7 @@
 /*   By: asimonin <asimonin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 19:31:10 by asimonin          #+#    #+#             */
-/*   Updated: 2023/04/12 17:01:02 by asimonin         ###   ########.fr       */
+/*   Updated: 2023/04/12 19:19:42 by asimonin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,15 @@ void	do_mvt_bis(t_tabs *var, char *mvt)
 	else if (ft_strcmp(mvt, "rrr\n") == 0)
 		rrr(var, 1);
 	else
+	{
+		get_next_line(1, 1);
+		free(mvt);
 		print_error(var);
+	}
 }
 
 void	do_mvt(t_tabs *var, char *mvt)
 {
-	if (ft_strlen(mvt) > 4)
-		print_error(var);
 	if (ft_strcmp(mvt, "sa\n") == 0)
 		sa(var, 1);
 	else if (ft_strcmp(mvt, "sb\n") == 0)

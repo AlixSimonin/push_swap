@@ -6,7 +6,7 @@
 /*   By: asimonin <asimonin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 17:08:14 by asimonin          #+#    #+#             */
-/*   Updated: 2023/04/12 15:43:32 by asimonin         ###   ########.fr       */
+/*   Updated: 2023/04/12 18:57:27 by asimonin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,11 @@ int	check_if_zero(char *pars_arg)
 int	is_number(char *pars_arg)
 {
 	int	i;
+	int	j;
 
+	j = 0;
+	if ((pars_arg[j] == '+' || pars_arg[j] == '-') && pars_arg[j + 1] == '\0')
+		return (1);
 	if (check_if_zero(pars_arg) == 0)
 	{
 		i = ft_atoi(pars_arg);
@@ -76,5 +80,13 @@ int	good_arg(t_tabs *var)
 	}
 	if (no_doubles(var) == 1 || double_zero > 1)
 		return (1);
+	i = 0;
+	while (i + 1 < var->size_tab && var->tab_int[i] < var->tab_int[i + 1])
+		i++;
+	if (var->size_tab - 1 == i)
+	{
+		free_all(var);
+		exit(0);
+	}
 	return (0);
 }

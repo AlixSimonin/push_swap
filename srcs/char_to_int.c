@@ -6,7 +6,7 @@
 /*   By: asimonin <asimonin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 16:50:10 by asimonin          #+#    #+#             */
-/*   Updated: 2023/04/11 16:35:22 by asimonin         ###   ########.fr       */
+/*   Updated: 2023/04/12 18:51:30 by asimonin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,4 @@ void	char_to_int(t_tabs *var)
 		var->tab_int[i] = ft_atoi(var->pars_arg[i]);
 		i++;
 	}
-	i = 0;
-	while (i + 1 < var->size_tab && var->tab_int[i] < var->tab_int[i + 1])
-		i++;
-	if (i == var->size_tab - 1)
-		print_error(var);
 }

@@ -6,7 +6,7 @@
 /*   By: asimonin <asimonin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 14:43:21 by asimonin          #+#    #+#             */
-/*   Updated: 2023/04/12 16:38:59 by asimonin         ###   ########.fr       */
+/*   Updated: 2023/04/12 19:15:50 by asimonin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # include <unistd.h>
 # include <stdio.h>
 
-char	*get_next_line(int fd);
+char	*get_next_line(int fd, int val);
 char	*ft_keep_rest(char *stock);
 char	*ft_only_line(char *stock);
 char	*ft_read_join(int fd, char *stock);

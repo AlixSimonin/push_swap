@@ -6,7 +6,7 @@
 /*   By: asimonin <asimonin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 06:13:59 by asimonin          #+#    #+#             */
-/*   Updated: 2023/04/12 16:56:11 by asimonin         ###   ########.fr       */
+/*   Updated: 2023/04/12 19:24:33 by asimonin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ void	rb(t_tabs *var, int nb)
 	t_stack	*temp;
 	t_stack	*bot;
 
+	if (var->size_b < 2)
+		return ;
 	temp = var->top_b;
 	var->top_b = var->top_b->next;
 	bot = get_last(var->top_b);

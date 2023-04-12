@@ -6,7 +6,7 @@
 /*   By: asimonin <asimonin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 14:13:30 by asimonin          #+#    #+#             */
-/*   Updated: 2023/04/12 16:52:29 by asimonin         ###   ########.fr       */
+/*   Updated: 2023/04/12 19:15:36 by asimonin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,13 +91,15 @@ char	*ft_read_join(int fd, char *stock)
 	return (stock);
 }
 
-char	*get_next_line(int fd)
+char	*get_next_line(int fd, int val)
 {
 	static char	*stock;
 	char		*str;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (0);
+	if (val)
+		return (free(stock), NULL);
 	stock = ft_read_join(fd, stock);
 	if (!stock)
 		return (NULL);
